@@ -3,10 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi portafolio1ins</title>
-    <link rel="stylesheep" href="./estilos.css">
+    <title>Mi primera pagina</title>
+    <link rel="stylesheet" href="./estilos.css">  
+    <style>
+        body {
+             font-family:Arial, Helvetica, sans-serif;       
+        }
+        header {
+            background-color: red;
+            color: white;
+        }
+        a {
+            color:inherit;
+        }
+        main{
+            background-color: yellow;
+        }
+        footer {
+            background-color: red;
+            color:white
+        }
+    </style>
 </head>
 <body>
-    Carlos Estupinan Figueroa
+    <header>
+        <a href="">
+            logo
+        </a>
+        <nav>
+            <li><a href="">Sobre mi</a></li>
+            <li><a href="">Portafolio</a></li>
+            <li><a href="">Servicios</a></li>
+            <li><a href="">Contacto</a></li>
+        </nav>
+    </header>
+    <main>
+        <h1>Titulo Principal</h1>
+        <section>
+            <h2>Sobre mi</h2>
+            <p>ingeniero de sistemas, edad 50 anos</p>
+        </section>
+        <section>
+            <h2>Portafolio</h2>
+            <p>Portafolio de ingeniero de sistemas</p>
+        </section>
+        <section>
+            <h2>Servicios</h2>
+            <p> Servicios de ingeniero de sistemas</p>  
+        </section>
+        <section>
+            <h2>Contacto</h2>
+            <form action="">
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Apellido">
+                <input type="text" placeholder="Correo">
+                <input type="text" placeholder="Telefono">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpiar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>Creado por Beto</p>
+    </footer>
 </body>
 </html>
