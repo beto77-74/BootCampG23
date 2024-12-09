@@ -5,11 +5,11 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
 
-  display: flex;
+  display: flex; /*centrar la caja principal*/
   justify-content: center; /* Alineación horizontal*/
   align-items: center; /* Alineación vertical */
 
-  height: 100vh;
+  height: 100vh;/*es toda la parte visble del navegador - 100%*/
 }
 
 main {
@@ -18,7 +18,7 @@ main {
   width: 800px;
   min-height: 500px;
 
-  border-radius: 32px;
+  border-radius: 32px; /*es  para redonderar la caja de texto*/
 
   /* padding: 24px; */
   /* padding-top: 24px;
@@ -26,17 +26,17 @@ main {
   padding-bottom: 24px;
   padding-left: 48px; */
 
-  padding: 24px 24px 24px 48px;
+  padding: 24px 24px 24px 48px; /*es el margen de todos los lados de nuestra caja principal*/
 
-  display: flex;
+  display: flex; /*para que uno parte de vaya uno al lado del otro*/
 }
 
 .content {
   /* border: 1px solid red; */
 
-  width: 400px;
+  width: 400px; /*definir el tamaño del texto*/
 
-  padding-right: 64px;
+  padding-right: 64px; /*esoaciado a la derecha*/
 
   color: hsl(235, 18%, 26%);
 }
@@ -56,20 +56,20 @@ main {
 
 .content form {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: column;/*para q se cob¿vierta en columna*/
+  gap: 16px; /*separacion entre elementos*/
 }
 
 .content label {
   display: flex;
   flex-direction: column;
   font-weight: 700;
-  gap: 8px;
+  gap: 8px; /*separacion entre elementos*/
 }
 
 .content input {
   border: 1px solid hsl(231, 7%, 60%);
-  padding: 16px;
+  padding: 16px;/*es para hacer un  espacio*/
   border-radius: 8px;
 }
 
@@ -78,7 +78,7 @@ main {
   color: white;
   font-weight: 700;
   font-family: inherit;
-  cursor: pointer;
+  cursor: pointer; /*parq q el puntero se ponga como manito*/
 }
 
 .photo {
