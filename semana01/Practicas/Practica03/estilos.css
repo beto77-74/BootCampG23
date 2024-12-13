@@ -1,0 +1,45 @@
+[href] {
+    color:red;
+}
+
+[href="https://google.com"] {
+    color:orange;
+}
+
+[href="https://facebook.com"] {
+    color:blue;
+}
+
+input[disabled]{
+    background-color: grey;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input:focus{
+    background-color: red;
+}
+
+ul li:nth-child(even){
+    color:red;
+    background-color: red;
+    color: white;
+}
+
+ul li:nth-child(odd){
+    background: yellow;
+    color: blacks;
+}
+
+/*ul li:first-child {
+    color:blue;
+}
+ul li:last-child {
+    color:coral;
+} */
