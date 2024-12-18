@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:wght@400;700&display=swap');
+
+body{
+    background-color: hsl(148, 38%, 91%);
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    height: 100vh; /*para poder centrat*/
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form{
+    background-color: hsl(0,0%,100%);
+    width: 400px;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+h1{
+    margin:0;
+    margin-bottom: 32px;
+    color: hsl(187, 24%, 22%);
+}
+
+label{
+    /*border:1px solid red;*/
+    display: block;
+    margin-bottom: 16px;
+
+}
+
+input [type=text],
+input [type=email],
+label textarea {
+    display:flex;
+    margin-top: 8px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+input [type=text],
+input [type=email],
+textarea{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid hls(186,15%,59%);
+    padding:16px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    width: 100%;
+    border: none;
+    background-color: hsl(169,82%,27%);
+    color: hsl(0,0%,100%);
+    border-radius: 8px;
+    padding: 16px;
+    font-weight: 700;
+}
+
+.required{
+    color:hsl(169,82%,27%);
+    font-weight: 700;
+}
+
+.query-type{
+    border: 1px solid hsl(186,15%,59%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:4px;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+
+.flex {
+    display: flex;
+    gap: 8px;
+  }
