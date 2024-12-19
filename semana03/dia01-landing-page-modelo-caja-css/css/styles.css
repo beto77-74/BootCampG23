@@ -30,7 +30,7 @@ a {
 
 img {
   /* TODO: RWD para imágenes */
-  max-width: 80%; --100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -151,27 +151,111 @@ img {
 .feature__text {
   text-align: center;
 }
-/*------------------*/
-.collaboration{
-  border: 1px solid red;
-  display:flex;
+
+/* COLLABORATION SECTION */
+
+.collaboration {
+  /* border: 1px solid red; */
+
+  background-color: hsl(218, 28%, 13%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
-.how_works{
-  border: 1px solid yellow;
-  font-family: "Raleway", sans-serif;
-  text-align: left;
+.how_works {
+  /* border: 1px solid yellow; */
 
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: min(100% - 3rem, 480px);
 }
 
 .how_works__title {
-  border: 1px solid orange;
   font-family: "Raleway", sans-serif;
-  text-align: left;
+  font-weight: 700;
+  font-size: 3rem;
 }
 
 .how_works__text {
-  border: 1px solid green;
-  font-family: "Raleway", sans-serif;
-  text-align: left;
+  font-family: "Open Sans", serif;
+}
+
+.how_works__button {
+  color: hsl(176, 68%, 64%);
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 0.5rem = 0.5 * 16px = 8px */
+
+  border-bottom: 1px solid hsl(176, 68%, 64%);
+  padding-bottom: 0.5rem;
+  width: 10.8rem;
+}
+
+/* TODO: TESTIMONIAL SECTION */
+
+.testimonials {
+  /* border: 1px solid red; */
+
+  background-color: hsl(218, 28%, 13%);
+  padding-top: 8rem;
+}
+
+.testimonials--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  margin: 0 auto;
+}
+
+.testimonial {
+  /* border: 1px solid yellow; */
+
+  /* padding: TOP RIGHT BOTTOM LEFT */
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.5rem solid hsl(216, 53%, 9%, 0.3);
+  background-color: hsl(219, 30%, 18%);
+}
+
+.testimonial__text {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.testimonial__profile {
+  /* border: 1px solid red; */
+
+  display: flex;
+  gap: .5rem;
+
+  font-size: 0.9rem;
+}
+
+.testimonial__profile img {
+  border-radius: 50%;
+}
+
+.testimonial__profile h4 {
+  font-weight: 700;
+}
+
+.testimonial__profile h5 {
+  font-weight: 400;
+}
+
+/* EARLY ACCESS SECTION */
+
+.early-access {
+  border: 1px solid red;
 }
