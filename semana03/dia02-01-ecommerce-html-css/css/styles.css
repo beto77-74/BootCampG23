@@ -42,8 +42,6 @@ a {
 /* HEADER */
 
 .header {
-  border: 1px solid red;
-
   height: 4.5rem; /* 4.5 * 16px = 72px */
 
   display: flex;
@@ -72,4 +70,10 @@ a {
   font-weight: 400; /* Por defecto */
   gap: 1rem;
   color: hsl(220, 14%, 75%);
+}
+
+/* PRODUCT-DETAIL */
+
+.product-detail {
+  border: 1px solid red;
 }
