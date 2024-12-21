@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(60, 56, 56);
+ 
+  }
+
+.wrapper {
+    /*width: min(100%, 1200px);*/
+    margin: 0 auto; /* TOP BOTTOM / LEFT RIGHT */
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  
+  .header__logo{
+    /*border: 1px solid red;*/
+    font-size: 32px;
+    color: orange;
+  }
+
+  .header__menu{
+    border: 1px solid red;
+    color: white;
+  }
