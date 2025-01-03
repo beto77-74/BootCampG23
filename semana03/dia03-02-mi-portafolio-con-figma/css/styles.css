@@ -54,5 +54,27 @@ body {
   }
 
   .hero__photo{
-    border: 1px solid red;
+    /*border: 1px solid red;*/
+    /*display: flex;*/
+    position:relative;
+    left:620px;
   }
+
+  .stack{
+    /*border: 1px solid red;*/
+    display: flex;
+    padding-left: 550px;
+    padding-right: 550px;
+    color: white;
+    font-size: 0.7rem;
+    justify-content: space-between;
+  }
+
+  .footer__logo{
+    border: 1px solid red;
+    display: flex;
+    padding-left: 720px;
+    color: orange;
+  }
+
+  .footer__copy{}
