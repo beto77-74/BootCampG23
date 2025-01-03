@@ -1,0 +1,80 @@
+body {
+    background-color: rgb(60, 56, 56);
+ 
+  }
+
+.wrapper {
+    /*width: min(100%, 1200px);*/
+    margin: 0 auto; /* TOP BOTTOM / LEFT RIGHT */
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+    padding: 16px;
+  }
+  
+  .header__logo{
+    /*border: 1px solid red;*/
+    font-size: 1.5rem;
+    color: orange;
+  }
+
+  .header__menu{
+    /*border: 1px solid red;*/
+    color: red;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .header__links{
+    /*border: 1px solid red;*/
+    display: flex;
+  }
+
+  .hero__gretting{
+    /*border: 1px solid red;*/
+    text-align: center;
+    color: white;
+  }
+
+  .hero__title{
+    /*border: 1px solid red;*/
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  .hero__description{
+    /*border: 1px solid red;*/
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .hero__photo{
+    /*border: 1px solid red;*/
+    /*display: flex;*/
+    position:relative;
+    left:620px;
+  }
+
+  .stack{
+    /*border: 1px solid red;*/
+    display: flex;
+    padding-left: 550px;
+    padding-right: 550px;
+    color: white;
+    font-size: 0.7rem;
+    justify-content: space-between;
+  }
+
+  .footer__logo{
+    border: 1px solid red;
+    display: flex;
+    padding-left: 720px;
+    color: orange;
+  }
+
+  .footer__copy{}
