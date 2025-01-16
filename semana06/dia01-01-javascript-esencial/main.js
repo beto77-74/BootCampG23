@@ -183,6 +183,11 @@ console.log(cadena2.length)
 console.log(cadena1.length === cadena2.length) // false
 
 // 2. (TODO) Retornar true si un numero es menor que 40 sino devolver false
+
+const numero01=40
+
+console.log(numero01<40)
+
 // 3. (TODO) Retornar True si un numero es menor que 60 sino devolver False
 // 4. (TODO) Retornar True si un numero es par sino devolver False
 // 5. (TODO) Retornar True si un numero es impar sino devolver False
