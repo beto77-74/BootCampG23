@@ -184,15 +184,45 @@ console.log(cadena1.length === cadena2.length) // false
 
 // 2. (TODO) Retornar true si un numero es menor que 40 sino devolver false
 
-const numero01=40
+const numero01=39
 
 console.log(numero01<40)
 
 // 3. (TODO) Retornar True si un numero es menor que 60 sino devolver False
+
+const numero02=61
+
+console.log(numero02<60)
+
 // 4. (TODO) Retornar True si un numero es par sino devolver False
+
+const numero03=11
+
+console.log(numero03%2===0)
+
 // 5. (TODO) Retornar True si un numero es impar sino devolver False
+
+const numero04=9
+
+console.log(numero04%2!==0)
+
 // 6. (TODO) calcular el area de un triangulo y mostrar su resultado si tenemos los valores base y altura
+
+const base=4
+const altura=8
+
+console.log((base*altura)/2)
+
 // 7. (TODO) Almacenar en una constante un número de 3 cifras y mostrar la suma de sus cifras elevada al cubo.
+
+let numero3cifras="123"
+let parte01=numero3cifras.substring(0,3)
+let parte02=numero3cifras.substring(2,1)
+let parte03=numero3cifras.substring(3,1)
+console.log(parte01)
+console.log(parte02)
+console.log(parte03)
+
 // 8. (TODO) Almacenar en una constante un monto de dinero, luego mostrar cuanto le toca a cada socio según la siguiente tabla:
 // SOCIO A = 30%, SOCIO B = 20%, SOCIO C = 60%
 
