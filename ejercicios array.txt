@@ -1,0 +1,3 @@
+https://github.com/fbettic/AdventOfCode2021-JS/blob/master/ch10_getCoins.js
+
+https://github.com/andresGarcia90/adventjs2024

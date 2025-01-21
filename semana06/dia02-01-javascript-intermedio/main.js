@@ -381,3 +381,36 @@ console.log(SUPER_HEROS[hero] ?? 'No soy un heroe 😉')
 
 // TODO: Resolver tres retos del siguiente link para mañana y comparten su solución en el chat
 // https://adventjs.dev/es
+
+
+/*primer reto*/
+/*
+ * @param {number[]} gifts - The array of gifts to prepare
+ * @returns {number[]} An array with the prepared gifts
+ */
+
+/*Santa Claus 🎅 ha recibido una lista de números mágicos que representan regalos 🎁, pero algunos de ellos están duplicados y deben ser eliminados para evitar confusiones. Además, los regalos deben ser ordenados en orden ascendente antes de entregárselos a los elfos.
+
+Tu tarea es escribir una función que reciba una lista de números enteros (que pueden incluir duplicados) y devuelva una nueva lista sin duplicados, ordenada en orden ascendente.
+*/
+
+function prepareGifts(gifts) {
+  let regalos = [...new Set(gifts)];
+  regalos = regalos.sort();
+  return regalos
+}
+
+const regalos1 = [5, 1, 3, 3, 6, 2, 5, 8, 8, 4]
+const prepararregalos = prepareGifts(regalos1)
+console.log(prepararregalos) // [1, 2, 3, 4, 5, 6, 8]
+
+const regalos2 = [6, 5, 5, 5, 5]
+const preparedGifts2 = prepareGifts(regalos2)
+console.log(preparedGifts2) // [5, 6]
+
+const regalos3 = []
+const preparedGifts3 = prepareGifts(regalos3)
+console.log(preparedGifts3) // []
+
+
+
