@@ -1,77 +1,53 @@
-/*function createFrame(names) {
-    let maxLength = 0;
-    names.forEach(name => {
-      if (name.length > maxLength) maxLength = name.length;
-    });
+/*const getDifference = (s, t) => {
+    s = [...s].sort();
+    t = [...t].sort();
+    return t.find((letra,i) => letra !== s[i]);
+  };
   
-    const namesWithSpaces = names.map(name => {
-      const spaces = ' '.repeat(maxLength - name.length);
-      return `* ${name}${spaces} *`;
-    });
-  
-    const border = '*'.repeat(maxLength + 4);
-  
-    return [border, ...namesWithSpaces, border].join("\n");
-  }*/
+  console.log(getDifference('lebronjames', 'lebronnjames'));
+  console.log(getDifference('abc', 'abcd'));*/
 
-  function createFrame(names) {
-    let maxLength = 0;
-    names.forEach(function(name) {
-      if (name.length > maxLength) maxLength = name.length;
-    });
-  
-    const namesWithSpaces = names.map(function(name) {
-      const spaces = ' '.repeat(maxLength - name.length);
-      return `* ${name}${spaces} *`;
-    });
-  
-    const border = '*'.repeat(maxLength + 4);
-  
-    return [border, ...namesWithSpaces, border].join("\n");
+  /*console.log(findNaughtyStep('abcd', 'abcde'));
+  console.log(findNaughtyStep('stepfor', 'stepor'));
+  console.log(findNaughtyStep('abcde', 'abcde'));*/
+
+
+
+  function findNaughtyStep(original, modified) {
+    let valor = original===modified;
+    
+    original = [...original].sort();
+    modified = [...modified].sort();
+
+    if (valor) {
+        return '';
+    }
+    else {
+    /*if (original.length < modified.length) {
+        return modified.find((char,i) => char !== original[i]);
+    } else if (original.length > modified.length) {
+        return original.find((char,i) => char !== modified[i]);
+    }*/
+
+    if (original.length < modified.length) {
+        return modified.find(function (char,i) {
+            modified.char !== original[i] })
+    } else if (original.length > modified.length) {
+        return original.find(function (char,i) {
+            original.char !== modified[i] });
+    }
+    }
   }
-
   
+  const original1 = 'abcd'
+  const modified1 = 'abcde'
+  
+  console.log(findNaughtyStep(original1, modified1)) // 'e'
 
-  createFrame(['midu', 'madeval', 'educalvolpz'])
-
-// Resultado esperado:
-// ***************
-// * midu        *
-// * madeval     *
-// * educalvolpz *
-// ***************
-
-console.log(createFrame(['midu']))
-
-// Resultado esperado:
-// ********
-// * midu *
-// ********
-
-console.log(createFrame(['a', 'bb', 'ccc']))
-
-// Resultado esperado:
-// *******
-// * a   *
-// * bb  *
-// * ccc *
-// *******
-
-console.log(createFrame(['a', 'bb', 'ccc', 'dddd']))
-
-
-const numbers = [1, 2, 3, 4, 5];
-
-numbers.forEach((number, index, array) => {
-  console.log(`Element: ${number}, Index: ${index}, Array: ${array}`);
-});
-
-const numbers2 = [1, 2, 3, 4, 5];
-
-numbers2.forEach(number => console.log(number));
-
-const numbers3 = [1, 2, 3, 4, 5];
-
-numbers3.forEach(function(number) {
-  console.log(number);
-});
+  const original2 = 'stepfor'
+  const modified2 = 'stepor'
+  console.log(findNaughtyStep(original2, modified2)) // 'f'
+  
+  const original3 = 'abcde'
+  const modified3 = 'abcde'
+  console.log(findNaughtyStep(original3, modified3)) // ''
