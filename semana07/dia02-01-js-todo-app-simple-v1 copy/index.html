@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de tareas</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style>
+    .seleccionado + span {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <main class="task w-90 mx-auto border rounded-lg overflow-hidden">
+    <h1 class="text-xl font-semibold text-center mb-4 p-4 bg-slate-200">Listado de tareas</h1>
+
+    <section>
+      <input
+        class="task__input text-xl m-2 border rounded-md"
+        type="text"
+        placeholder="Añade una nueva tarea..."
+      />
+      <button class="task__add tex-xs border px-2 bg-green-700 text-white">
+        Añadir tarea
+      </button>
+    </section>
+
+    <ul class="task__list">
+      <!-- <li>Aprender Javascript</li>
+      <li>Aprender CSS</li>
+      <li>Resolver muchos algoritmos</li> -->
+    </ul>
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+</html>
