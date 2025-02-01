@@ -64,6 +64,7 @@ const selectLetter = (letter) => {
   renderMaskedWord()
 
   renderAlphabet()
+
 }
 
 const renderMaskedWord = () => {
@@ -82,10 +83,15 @@ const renderMaskedWord = () => {
     console.log('YOU WON!')
     elResult.classList.toggle('hidden')
     elResult.textContent = 'YOU WON!'
+
+   
+
   } else if (tries > MAX_TRIES) {
     console.log('YOU LOST!')
     elResult.classList.toggle('hidden')
     elResult.textContent = 'YOU LOST!'
+
+    
   }
 }
 
