@@ -20,7 +20,7 @@ buttons.forEach(function(button) {
 
     if ('+-*'.includes(buttonText)) {
       // Asignamos el operador actual
-      console.log('presionaste el operador', buttonText)
+      console.log('presionaste el operador ', buttonText)
       operador = buttonText
       operando = Number(numeroActual)
       numeroActual = '0'
@@ -35,14 +35,15 @@ buttons.forEach(function(button) {
         numeroActual = Number(operando) * Number(numeroActual)
       }
     } else if (buttonText === 'CE') {
-      console.log('presionaste el botón', buttonText)
+      console.log('presionaste el botón ', buttonText)
       numeroActual = '0'
       operador = ''
       operando = ''
     } else {
       // 01- Cuando hemos presionado solo los números
-      console.log('presionaste el número', buttonText)
+      console.log('presionaste el número ', buttonText)
       numeroActual = numeroActual + buttonText
+      console.log('numero actaul es ' + numeroActual)
     }
 
     inputDisplay.value = Number(numeroActual)
