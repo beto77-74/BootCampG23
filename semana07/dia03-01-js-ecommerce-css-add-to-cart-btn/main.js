@@ -20,4 +20,20 @@ btnMas.addEventListener('click', function(event) {
   cantidad.value = contador
 })
 
+
 // TODO: Añadir el evento click al botón btnMenos y validar que no se ingresen números menores a 1
+
+btnMenos.addEventListener('click', function(event) {
+  contador = contador - 1
+
+  console.log(contador)
+
+  // DONE: Validar que el número sea como minimo 1
+
+  if(contador < 1) {
+    contador = 1
+    return
+  }
+
+  cantidad.value = contador
+})

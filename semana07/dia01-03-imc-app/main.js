@@ -33,9 +33,9 @@ buttonCalcular.addEventListener('click', function(event) {
 
   if (indiceMasaCorporal < 18.5) {
     resultado = 'Baja'
-  } else if (indiceMasaCorporal >= 18.5 && indiceMasaCorporal <= 24.9) {
+  } else if (indiceMasaCorporal >= 18.5 && indiceMasaCorporal <= 24.99) {
     resultado = 'Normal'
-  } else if (indiceMasaCorporal >= 25 && indiceMasaCorporal <= 29.9) {
+  } else if (indiceMasaCorporal >= 25 && indiceMasaCorporal <= 29.99) {
     resultado = 'Sobrepeso'
   } else if (indiceMasaCorporal > 30) {
     resultado = 'Obeso'

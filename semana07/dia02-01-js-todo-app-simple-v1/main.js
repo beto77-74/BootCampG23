@@ -31,14 +31,17 @@ taskAdd.addEventListener('click', function(event) {
 
   taskList.appendChild(elementLi)
 
-  taskInput.value = ''
+  console.log(taskList.appendChild(elementLi))
 
+  taskInput.value = ''
+  
   // const button = document.createElement('button')
   // button.textContent = '¡Hola soy un botón!'
   // console.log(button)
   // document.body.appendChild(button)
 })
 
+  
 taskList.addEventListener('click', function(event) {
   console.log('clicked taskList')
   console.log({ target: event.target })
