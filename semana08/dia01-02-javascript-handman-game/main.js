@@ -84,18 +84,13 @@ const renderMaskedWord = () => {
     elResult.classList.toggle('hidden')
     elResult.textContent = 'YOU WON!'
 
-    //elStartAgain.classList.toggle('block')
-
-   
+  
 
   } else if (tries > MAX_TRIES) {
     console.log('YOU LOST!')
     elResult.classList.toggle('hidden')
     elResult.textContent = 'YOU LOST!'
-
-    //elStartAgain.classList.toggle('block')
-
-    
+     
   }
 }
 
