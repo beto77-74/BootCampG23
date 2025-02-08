@@ -1,6 +1,8 @@
 import { useState } from "react"
 import TodoHeader from "./components/TodoHeader"
 import TodoList from "./components/TodoList"
+import TodoForm from "./components/TodoForm"
+import TodoStats from "./components/TodoStats"
 
 const App = () => {
   const DEFAULT_TODOS = [
@@ -22,7 +24,6 @@ const App = () => {
   ]
 
   const [todos, setTodos] = useState(DEFAULT_TODOS)
-  const [input, setInput ] = useState('')
 
   console.log(todos)
 
@@ -55,51 +56,59 @@ const App = () => {
     setTodos(updatedTodos)
   }
 
-  const handleChange = (event) => {
-    // Vamos a capturar lo que escribimos en la caja de texto
-    setInput(event.target.value)
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    
-    const newTodo = {
-      id: crypto.randomUUID(),
-      title: input,
-      completed: false
-    }
-
-    console.log(newTodo)
-
+  const handleSubmit = (newTodo) => {
     setTodos([...todos, newTodo])
-
-    setInput('')
   }
  
+  const handleClearCompletedTodos = () => {
+    const incompletedTodos = todos.filter(todo => !todo.completed)
+
+    setTodos(incompletedTodos)
+  }
+
+  const handleSaveItem = (todo) => {
+    console.log('TODO SAVED!')
+    console.log(todo)
+    // TODO: 5 - Guardar el todo editado en el estado todos
+  }
+
   return (
     <main
       className="bg-yellow-100 w-[400px] mx-auto mt-10 border border-yellow-400 rounded-lg shadow-lg p-4"
     >
       <TodoHeader title='TODO APP + React + Tailwind' color='text-blue-500' />
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          className="w-full border border-yellow-400 my-3 p-2 rounded-lg"
-          placeholder="¿Qué deseas hacer hoy?"
-          required
-          value={input}
-          onChange={handleChange}
-        />
-
-        {/* {input} */}
-      </form>
-
-      <TodoList
-        todos={todos}
-        onCompleted={handleCompleted}
-        onRemoveTodo={handleRemoveTodo}
+      <TodoForm
+        onSubmit={handleSubmit}
       />
+
+      {/* TODO: 03 - Añadir una estadística de cuantas tareas estan completadas y el total de tareas. */}
+
+      {/* Renderizado condicional */}
+
+      {
+        todos.length > 0
+          ? (
+            <>
+              <TodoStats
+                todos={todos}
+                onClearCompletedTodos={handleClearCompletedTodos}
+              />
+              <TodoList
+                todos={todos}
+                onCompleted={handleCompleted}
+                onRemoveTodo={handleRemoveTodo}
+                onSave={handleSaveItem}
+              />
+            </>
+
+          )
+          : (
+            <div className="text-center font-medium text-gray-500">
+              Agrega más tareas en la parte superior.
+            </div>
+          )
+      }
 
       <pre className="bg-slate-100 p-4 mt-8">{JSON.stringify(todos, null, 2)}</pre>
     </main>
