@@ -1,5 +1,5 @@
 import { TbEdit, TbTrash } from "react-icons/tb";
-import Avatar from 'boring-avatars'
+import Avatar from 'boring-avatars';
 import { useState } from "react";
 
 // TODO: Reto 2 - Persistir los datos de los estudiantes en localstorage
