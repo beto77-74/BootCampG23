@@ -1,10 +1,12 @@
 import { TbEdit, TbTrash } from "react-icons/tb";
-import Avatar from 'boring-avatars';
-import { useState } from "react";
+import Avatar from 'boring-avatars'
+import { useEffect, useState } from "react";
 
 // TODO: Reto 2 - Persistir los datos de los estudiantes en localstorage
 
-// const App = () => {
+const App = () => {
+  const MOCKAPI_URL = 'https://67ad6dbf3f5a4e1477dda225.mockapi.io/students'
+
   // const DEFAULT_STUDENTS = [
     // {
     //   id: '1',
@@ -29,13 +31,20 @@ import { useState } from "react";
     city: ''
   }
 
-  const [students, setStudents] = useState(() => {
-    const localStorageStudents = JSON.parse(localStorage.getItem('STUDENTS') ?? '[]')
-    console.log(localStorageStudents)
-    return localStorageStudents
-  })
+  const [students, setStudents] = useState([])
 
   const [form, setForm] = useState(DEFAULT_FORM)
+
+  const fetchStudents = async () => {
+    const response = await fetch(MOCKAPI_URL)
+
+    return await response.json()
+  }
+
+  useEffect(() => {
+    fetchStudents()
+      .then(setStudents)
+  }, [])
 
   const handleChange = (event) => {
     // console.log({ input: event.target })
@@ -152,6 +161,12 @@ import { useState } from "react";
           className="bg-blue-800 text-white hover:bg-blue-900 font-medium rounded-lg text-sm w-full py-2.5 cursor-pointer"
           type="submit"
           value="Save student"
+        />
+        <input
+          className="bg-amber-500 text-white hover:bg-amber-600 font-medium rounded-lg text-sm w-full py-2.5 cursor-pointer"
+          type="button"
+          value="Clean forms"
+          onClick={() => setForm(DEFAULT_FORM)}
         />
       </form>
 
