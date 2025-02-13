@@ -1,7 +1,7 @@
-import React from 'react';
 import { useState } from "react";
+import { useEffect } from "react";
 import axios from 'axios'
-//import YouTube from 'react-youtube';
+import YouTube from 'react-youtube';
 import './App.css';
 
 
@@ -18,13 +18,13 @@ function App() {
   const [searchKey, setSearchKey] = useState("");
 
   const [trailer, setTrailer] = useState(null);
-  const [movie, setMovie] = useState({ title: "Cargando Peliculas..." });
+  const [movie, setMovie] = useState();
   const [playing, setPlaying] = useState(false);
 
   //funcion para realizar la peticion a la api
   const fetchMovies = async(searchKey)=> {
     const type = searchKey ? "search" : "discover"
-    const {data: { results },
+    const {data: { results }
   } = await axios.get(`${API_URL}/${type}/movie`, {
       params: {
         api_key: API_KEY,
@@ -33,12 +33,18 @@ function App() {
     });
   }
 
-  setMovies(results)
-  setMovie(results[0])
+
+   //console.log('data',results);
+
+
 
 useEffect(()=> {
   fetchMovies();
 },[])
+
+
+setMovies(results)
+setMovie(results[0])
 
   return(
     <div>
