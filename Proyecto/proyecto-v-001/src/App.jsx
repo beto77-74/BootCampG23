@@ -1,14 +1,13 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import axios from 'axios'
 import YouTube from 'react-youtube';
 import './App.css';
 
 
 
-function App() {
-  const API_URL = "https://api.themoviedb.org/3";
-  const API_KEY = "c36679b7653f2e6c0b0eabddee05cb1f";
+const App = () => {
+  const API_URL = "https://www.themoviedb.org/3";
+  const API_KEY = "4f5f43495afcc67e9553f6c684a82f84";
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
 
   const URL_IMAGE = "https://image.tmdb.org/t/p/original";
@@ -22,15 +21,13 @@ function App() {
   const [playing, setPlaying] = useState(false);
 
   //funcion para realizar la peticion a la api
-  const fetchMovies = async(searchKey)=> {
-    const type = searchKey ? "search" : "discover"
-    const {data: { results }
-  } = await axios.get(`${API_URL}/${type}/movie`, {
-      params: {
-        api_key: API_KEY,
-        query: searchKey,
-      },
-    });
+  const fetchMovies = async()=> {
+    const response = await fetch(`${API_URL}/movie`,  //axios.get(`${API_URL}/${type}/movie`)
+    {params: {
+      api_key: API_KEY,
+      query: searchKey,
+    }})
+    return await response.json()
   }
 
 
@@ -39,12 +36,13 @@ function App() {
 
 
 useEffect(()=> {
-  fetchMovies();
+  fetchMovies()
+  .then (setMovies)
 },[])
 
 
-setMovies(results)
-setMovie(results[0])
+//setMovies(results)
+//setMovie(results[0])
 
   return(
     <div>
