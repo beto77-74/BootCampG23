@@ -20,29 +20,46 @@ const App = () => {
   const [movie, setMovie] = useState();
   const [playing, setPlaying] = useState(false);
 
+  const fetchMovies = async (searchKey) => {
+    const type = searchKey ? "search" : "discover";
+
+    const {
+      data: { results },
+    } = await axios.get(`${API_URL}/${type}/movie`, {
+      params: {
+        api_key: API_KEY,
+        query: searchKey,
+      },
+    });
+    //console.log('data',results);
+    //setSelectedMovie(results[0])
+    
+    useEffect(()=> {
+         fetchMovies()
+         .then (setMovies(results[0]))
+       },[])
+    //setMovies(results);
+    //setMovie(results[0]);
+
+  };
+
   //funcion para realizar la peticion a la api
-  const fetchMovies = async()=> {
-    const response = await fetch(`${API_URL}/movie`,  //axios.get(`${API_URL}/${type}/movie`)
-    {params: {
-      api_key: API_KEY,
-      query: searchKey,
-    }})
-    return await response.json()
-  }
+  // const fetchMovies = async()=> {
+  //   const response = await fetch(`${API_URL}/movie`,  //axios.get(`${API_URL}/${type}/movie`)
+  //   {params: {
+  //     api_key: API_KEY,
+  //     query: searchKey,
+  //   }})
+  //   return await response.json()
+  // }
+
+  //  //console.log('data',results);
+  // useEffect(()=> {
+  //   fetchMovies()
+  //   .then (setMovies)
+  // },[])
 
 
-   //console.log('data',results);
-
-
-
-useEffect(()=> {
-  fetchMovies()
-  .then (setMovies)
-},[])
-
-
-//setMovies(results)
-//setMovie(results[0])
 
   return(
     <div>
