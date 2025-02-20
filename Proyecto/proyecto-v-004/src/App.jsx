@@ -30,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     fetchMovies()
-      .then(data => setMovies(data))
+      .then(data => {setMovies(data.results)})
   }, [])
 
   const handleChange = (event) => {
