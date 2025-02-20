@@ -37,7 +37,7 @@ export const fetchMovies = async () => {
     try{
       const response = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
 
-      const { data } = await response.json()
+      const  data  = await response.json()
       //console.log(data)
       // sólo seteamos el valor de peliculas si existe results y este es un Array y tiene datos
       if (Array.isArray(data) && data.length) {
