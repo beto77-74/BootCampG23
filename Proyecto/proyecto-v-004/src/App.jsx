@@ -102,33 +102,13 @@ const App = () => {
             </tr>
           </thead>
           <tbody> */}
-          {Array.isArray(movies) && movies.map((movie) => {
-            // <tr
-            //   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200"
-            //   key={movie.id}
-            // >
-            //   <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            //     {movie.id}
-            //   </th>
-            //   <td key={movie.id} className="px-6 py-4">
-            //     <img
-            //       src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-            //       width={100}
-            //       height={250}
-            //     />
-            //   </td>
-            // </tr>
-
-            <div key={movie.id} className="px-6 py-4">
-                 <img
-                   src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                   width={100}
-                   height={250}
-                 />
-            </div>
-            console.log('movie.poster_path')
-          })}
-          
+          {movies.map(movie => (
+          <article className="movie w-[200px] h-[150px] bg-yellow-100 flex flex-col justify-center items-center rounded-lg uppercase shadow" >
+          <img src={movie.image} height="40" />
+          <h3 className="mt-4 font-medium">{movie.name}</h3>
+          </article>
+          ))}
+           
           {/* </tbody>
         </table> */}
         </div>
