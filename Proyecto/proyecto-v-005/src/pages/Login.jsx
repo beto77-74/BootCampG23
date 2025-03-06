@@ -52,7 +52,7 @@ export const Login = () => {
         <form onSubmit={handleLogin}>
           <BaseInput
             label="Usuario"
-            placeholder="jhondoe"
+            placeholder="cestupif"
             name="username"
             onChange={handleChange}
             value={form.username}
@@ -75,7 +75,7 @@ export const Login = () => {
         </form>
       </div>
 
-      <pre>{JSON.stringify(form)}</pre>
+      {/* <pre>{JSON.stringify(form)}</pre> */}
     </main>
   )
 }

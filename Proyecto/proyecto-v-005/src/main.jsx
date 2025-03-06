@@ -11,14 +11,14 @@ import { LayoutAdmin } from './layouts/LayoutAdmin'
 
 import AuthValidation from './components/AuthValidation'
 
-import ProductsList from './pages/ProductsList'
-//import { InvoiceList } from './pages/InvoiceList'
-//import { InvoiceView } from './pages/InvoiceView'
-//import { InvoiceNew } from './pages/InvoiceNew'
-//import { InvoiceEdit } from './pages/InvoiceEdit'
+import  { Cartelera } from './pages/Cartelera'
+import  { ListaEstrenos }  from './pages/ListaEstrenos'
+import  { Busqueda }  from './pages/Busqueda'
+
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+    
     <Routes>
       <Route element={<LayoutAuth />}>
         <Route path='/' element={<Login />} />
@@ -29,17 +29,16 @@ createRoot(document.getElementById('root')).render(
         <Route element={<LayoutAdmin />}>
           <Route path='/home' element={<Home />} />
 
-          <Route path='/products' element={<ProductsList />} />
+          <Route path='/cartelera' element={<Cartelera />} />
 
-          <Route path='invoices'>
-            {/* <Route path='list' element={<InvoiceList />} />
-            <Route path=':id' element={<InvoiceView />} />
-            <Route path='new' element={<InvoiceNew />} />
-            <Route path=':id/edit' element={<InvoiceEdit />} /> */}
-          </Route>
+          <Route path='/estrenos' element={<ListaEstrenos />} />
+
+          <Route path='/busqueda' element={<Busqueda />} />
+
         </Route>
 
       </Route>
     </Routes>
   </BrowserRouter>,
 )
+
