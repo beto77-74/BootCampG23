@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../hooks/useAuth"
+import { formatDate } from "../src/utils"
 
 import miCalendar from "../icons/calendar.svg"; 
 
@@ -102,7 +103,7 @@ export const Busqueda = () => {
                 <h3 className="mt-1 font-medium">{movie.title}</h3>
                 <div className="flex">
                     <img src={miCalendar} width={20}/>
-                   <h4 className="font-normal">{movie.release_date}</h4>
+                   <h4 className="font-normal">{formatDate(movie.release_date)}</h4>
                 </div>
               </article> 
               </div> 
