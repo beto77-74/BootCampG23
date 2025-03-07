@@ -21,7 +21,7 @@ const fetchMovies = async () => {
                }
             }
 
-     const response = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=es-US&page=1&primary_release_date.gte=07%2F03%2F2025&primary_release_date.lte=31%2F12%2F2026&sort_by=popularity.desc', options)
+     const response = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=es-US&page=1&primary_release_date.gte=08%2F03%2F2025&primary_release_date.lte=31%2F12%2F2027&sort_by=popularity.desc', options)
 
     const  data  = await response.json()
       
