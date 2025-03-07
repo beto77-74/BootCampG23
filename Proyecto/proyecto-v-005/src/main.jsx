@@ -16,6 +16,7 @@ import  { ListaEstrenos }  from './pages/ListaEstrenos'
 import  { Busqueda }  from './pages/Busqueda'
 
 
+
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     

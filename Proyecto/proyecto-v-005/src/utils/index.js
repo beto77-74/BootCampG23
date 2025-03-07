@@ -1,5 +1,9 @@
 export const formatDate = (date) => {
     const dateParsed = new Date(date)
+
+    if (isNaN(dateParsed)) {
+      return;
+    }
   
     const localeDefault = 'en-US'
   

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../hooks/useAuth"
-import { formatDate } from "../src/utils"
+import { formatDate } from "/src/utils"
 
 import miCalendar from "../icons/calendar.svg"; 
 
@@ -20,7 +20,7 @@ const fetchMovies = async () => {
                }
             }
 
-     const response = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=es-US&page=2&primary_release_date.gte=01%2F03%2F2025&primary_release_date.lte=31%2F12%2F2026&sort_by=popularity.desc', options)
+     const response = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=es-US&page=1&primary_release_date.gte=01%2F03%2F2025&primary_release_date.lte=31%2F12%2F2026&sort_by=popularity.desc', options)
 
     const  data  = await response.json()
       
@@ -76,20 +76,25 @@ export const ListaEstrenos = () => {
 
           
         return (
+          <>
+          <h1 className="title text-4xl">Proximos estrenos</h1>
+        
           <main className="flex p-10 justify-between">
-            <div className="movies grid grid-cols-4 gap-60">
+            <div className="movies grid md:grid-cols-4 gap-y-60 gap-x-20">
               {movies.map(movie => (
                 <article className="movie w-[200px] h-[150px] justify-center" >
                   <img src={movie.image} />
                   <h3 className="mt-1 font-medium">{movie.title}</h3>
                   <div className="flex">
                     <img src={miCalendar} width={20}/>
-                    <h4 className="font-normal">{formatDate(movie.release_date)}</h4>
+                    <h4 className="font-normal text-xs">{formatDate(movie.release_date)}</h4>
+                    <img src={miFileDescription} width={15}/>
                   </div>
                 </article>
                 ))}
             </div>
           </main>
+          </>
         )
 }
   

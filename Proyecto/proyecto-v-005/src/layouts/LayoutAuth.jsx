@@ -7,7 +7,7 @@ export const LayoutAuth = () => {
     <>
       <header className="py-4 px-4 border  bg-emerald-950" >
         <div className="container mx-auto flex justify-between" >
-          <h1 className="font-bold text-3xl text-blue-50">MEG Peliculas</h1>
+          <h1 className="font-bold text-3xl text-blue-50">MEG Peliculas - Cartelera</h1>
         </div>
       </header>
 

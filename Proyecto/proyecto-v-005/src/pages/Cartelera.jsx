@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../hooks/useAuth"
-import { formatDate } from "../src/utils"
+import { formatDate } from "/src/utils"
+
+import  { Detalle } from "/src/pages/Detalle"
 
 import miCalendar from "../icons/calendar.svg"; 
+import miFileDescription from "../icons/file-description.svg"; 
 
 const APIKEY = 'c36679b7653f2e6c0b0eabddee05cb1f';
 const BASEURL = 'https://api.themoviedb.org/3';
 const IMAGEURL = 'https://image.tmdb.org/t/p/original'
-
-
 
 
 const fetchMovies = async () => {
@@ -35,13 +36,15 @@ const fetchMovies = async () => {
         const title = movie.title
         const release_date = movie.release_date
         const image = `${IMAGEURL}${img}`
+        const overview = movie.overview
     
         return {
           ...movie,
           id,
           image,
           title,
-          release_date
+          release_date,
+          overview
         }
       })
 
@@ -50,10 +53,18 @@ const fetchMovies = async () => {
         results: dataResults
       }
   }
+ 
+
+// export const Detalle = (movieSelected) => {
+//     //setForm(movieSelected)
+//     const movieSelect = movieSelected
+//     console.log(movieSelect)
+//     return movieSelect
+//   }
 
 export const Cartelera = () => {
     const { user } = useAuth()
-
+    
     const INITIAL_FORM = {
         adult:'',
         backdrop_path:'',
@@ -79,22 +90,30 @@ export const Cartelera = () => {
           .then(data => {setMovies(data.results)})
       }, [])
     
-
+ 
       
     return (
-        <main className="flex p-10 justify-between">
-            <div className="movies grid grid-cols-4 gap-60">
+      <>
+        <h1 className="title text-4xl">Cartelera</h1>
+        <main className="flex p-10 md:justify-between">
+            <div className="movies grid md:grid-cols-4 gap-y-60 gap-x-20">
                 {movies.map(movie => (
                     <article className="movie w-[200px] h-[150px] justify-center">
                         <img src={movie.image} />
                         <h3 className="mt-1 font-medium">{movie.title}</h3>
                         <div className="flex">
                             <img src={miCalendar} width={20}/>
-                            <h4 className="font-normal">{formatDate(movie.release_date)}</h4>
+                            <h4 className="font-normal text-xs">{formatDate(movie.release_date)}</h4>
+                            <img src={miFileDescription} width={15}/>
+                            {/* <img onClick={() => Detalle(movie.id)} src={miFileDescription} width={15}/> */}
                         </div>
                     </article>
                     ))}
             </div>
+
+            
+          
         </main>
+        </>
     )
   }

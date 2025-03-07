@@ -14,11 +14,9 @@ export const LayoutAdmin = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    // Limpiar la clave auth desde localstorage
     logout()
 
-    // Redirigir el usuario a /login
-    navigate('/') // redirige a login page
+    navigate('/') 
   }
 
 
@@ -48,15 +46,15 @@ export const LayoutAdmin = () => {
             <h1 className="font-bold text-3xl text-blue-50">MEG Peliculas - Cartelera</h1>
           </Link>
           
-          <div className="flex gap-8">
+          <div className="hidden md:flex gap-8">
             <button><img src={miImagenmovie} width={75}/></button>
             <button><img src={miImagenticket} width={75}/></button>
             <button><img src={miImagenvideo} width={75}/></button>
             <button><img src={miImagenchair} width={75}/></button>
           </div>
 
-          <div className="flex gap-4 p-3  text-blue-50 ">
-            <span className="font-bold">{handleSaludo()} {user?.username}</span>
+          <div className="md:flex gap-4 p-3  text-blue-50 ">
+            <span className="md:font-bold">{handleSaludo()} {user?.username}</span>
             <button className="border rounded p-1 justify-center cursor-pointer"onClick={handleLogout}>
               <img src={miImagenlogout} width={25} alt="Cerrar sesion"/>
             </button>

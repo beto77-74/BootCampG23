@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../hooks/useAuth"
-import { formatDate } from "../src/utils"
+import { formatDate } from "/src/utils"
 
 import miCalendar from "../icons/calendar.svg"; 
 
@@ -10,9 +10,9 @@ const API_KEY = "c36679b7653f2e6c0b0eabddee05cb1f"
 
 
 const fetchMovies = async (busqueda) => {
-  const response = await fetch(`${URLBASE}?query=${busqueda}&api_key=${API_KEY}`)
+  const response = await fetch(`${URLBASE}?query=${busqueda}&language=es-US&api_key=${API_KEY}`)
 
-    console.log(response) 
+    //console.log(response) 
     const  data  = await response.json()
     
     const dataResults = data.results.map(movie => {
@@ -82,7 +82,7 @@ export const Busqueda = () => {
       
   return (
       <>
-        <h1 className="title">Buscar Peliculas</h1>
+        <h1 className="title text-4xl">Buscar Peliculas</h1>
         <main>
           <form className="flex mt-4 gap-3" onSubmit={handleSubmit}>
             <input
@@ -95,7 +95,7 @@ export const Busqueda = () => {
             {/* <button type="submit" className="search-button"  >Buscar</button> */}
           </form> 
        
-          <div className="movies grid grid-cols-4 gap-60 mt-5">
+          <div className="movies grid md:grid-cols-4 gap-y-60 gap-x-20 p-10 md:justify-center">
             {movies.map(movie => (
               <div key={movie.id}>
                <article className="movie w-[200px] h-[150px] justify-center"  >
@@ -103,12 +103,14 @@ export const Busqueda = () => {
                 <h3 className="mt-1 font-medium">{movie.title}</h3>
                 <div className="flex">
                     <img src={miCalendar} width={20}/>
-                   <h4 className="font-normal">{formatDate(movie.release_date)}</h4>
+                    <h4 className="font-normal text-xs">{formatDate(movie.release_date)}</h4>
+                    <img src={miFileDescription} width={15}/>
                 </div>
               </article> 
               </div> 
                ))}
           </div>
+          
         </main>
       </> 
    

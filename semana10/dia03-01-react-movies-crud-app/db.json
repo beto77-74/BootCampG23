@@ -57,6 +57,14 @@
       "genreId": "4",
       "resumen": "hola3",
       "id": "2084"
+    },
+    {
+      "id": "e365",
+      "name": "Boda Real",
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+      "release": "2025-03-07",
+      "genreId": "2",
+      "resumen": ""
     }
   ]
 }
