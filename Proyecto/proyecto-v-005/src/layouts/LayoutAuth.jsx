@@ -13,7 +13,7 @@ export const LayoutAuth = () => {
 
       <main className="my-6">
        
-        <div className="container mx-auto w-screen h-screen" style={{ backgroundImage: `url(${background})`}}> 
+        <div className="container md:mx-auto w-screen h-screen" style={{ backgroundImage: `url(${background})`}}> 
           <Outlet />
         </div>
       </main>
