@@ -3,6 +3,7 @@ import { useAuth } from "../hooks/useAuth"
 import { formatDate } from "/src/utils"
 
 import miCalendar from "../icons/calendar.svg"; 
+import miFileDescription from "../icons/file-description.svg"; 
 
 const IMAGEURL = 'https://image.tmdb.org/t/p/original'
 const URLBASE = "https://api.themoviedb.org/3/search/movie"

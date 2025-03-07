@@ -3,6 +3,7 @@ import { useAuth } from "../hooks/useAuth"
 import { formatDate } from "/src/utils"
 
 import miCalendar from "../icons/calendar.svg"; 
+import miFileDescription from "../icons/file-description.svg"; 
 
 const APIKEY = 'c36679b7653f2e6c0b0eabddee05cb1f';
 const BASEURL = 'https://api.themoviedb.org/3';
