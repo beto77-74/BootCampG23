@@ -54,7 +54,7 @@ export const LayoutAdmin = () => {
           </div>
 
           <div className="md:flex gap-4 p-3  text-blue-50 ">
-            <span className="md:font-bold">{handleSaludo()} {user?.username}</span>
+            <span className="hidden md:flex md:font-bold">{handleSaludo()} {user?.username}</span>
             <button className="border rounded p-1 justify-center cursor-pointer"onClick={handleLogout}>
               <img src={miImagenlogout} width={25} alt="Cerrar sesion"/>
             </button>
