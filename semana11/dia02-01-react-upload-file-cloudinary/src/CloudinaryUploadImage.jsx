@@ -4,8 +4,8 @@ import { fill } from '@cloudinary/url-gen/actions/resize'
 import { useState } from 'react'
 
 const CLOUD_NAME = "dgddunrtu" //"dtmarfdry"
-const UPLOAD_PRESET = "g23-semana11"
-const FOLDER_NAME = "g23-semana11"
+const UPLOAD_PRESET = "g23-semana11"//"g23-semana11" //sirenita
+const FOLDER_NAME = "g23-semana11"//"g23-semana11"
 
 export const CloudinaryUploadImage = ({ onUpload, onRemove }) => {
   const [image, setImage] = useState('')
@@ -89,6 +89,9 @@ export const CloudinaryUploadImage = ({ onUpload, onRemove }) => {
           Remove
         </button>
       }
+      
+      
+      
     </div>
   )
 }
