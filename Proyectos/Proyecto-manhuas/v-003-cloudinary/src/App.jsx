@@ -1,40 +1,73 @@
-import { useState } from "react"
+import { useState } from 'react';
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
 
-import { CloudinaryUploadImage } from "./CloudinaryUploadImage"
+import CloudinaryUploadWidget  from './components/CloudinaryUploadWidget';
+
+//import './App.css';
 
 const App = () => {
-  const [form, setForm] = useState({
-    image: ''
-  })
+  // Configuration
+  const CLOUD_NAME = "dgddunrtu"; //'hzxyensd5';
+  const UPLOAD_PRESET = "g23-semana11";//'aoh4fpwm';
 
-  const handleUpload = (imageUrl) => {
-    setForm({
-      ...form,
-      image: imageUrl
-    })
-  }
+  // State
+  const [publicId, setPublicId] = useState('');
+
+  // Cloudinary configuration
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: CLOUD_NAME,
+    },
+  });
+
+  // Upload Widget Configuration
+  const uwConfig = {
+    cloudName: CLOUD_NAME,
+    uploadPreset: UPLOAD_PRESET
+  };
 
   return (
-    <>
-      <header className="border-b-2">
-        <div className="flex h-16 items-center justify-between px-4 bg-zinc-100">
-          <h1 className="text-xl font-bold">
-            Upload file + Cloudinary
-          </h1>
+    <div className="App">
+      <h3>Cloudinary Upload Widget Example</h3>
+
+      <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
+
+      {/* <div className="documentation-links">
+        <p>
+          <a
+            href="https://cloudinary.com/documentation/upload_widget"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Upload Widget User Guide
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://cloudinary.com/documentation/upload_widget_reference"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Upload Widget Reference
+          </a>
+        </p>
+      </div> */}
+
+      {publicId && (
+        <div
+          className="image-preview"
+          style={{ width: '800px', margin: '20px auto' }}
+        >
+          <AdvancedImage
+            style={{ maxWidth: '50%' }}
+            cldImg={cld.image(publicId)}
+            plugins={[responsive(), placeholder()]}
+          />
         </div>
-      </header>
-  
-      <main className="p-8">
-        <CloudinaryUploadImage
-          onUpload={handleUpload}
-          onRemove={() => setForm({ ...form, image: '' })}
-        />
+      )}
+    </div>
+  );
+};
 
-        <h3 className='text-xl mt-4'>Form state</h3>
-        <pre className='bg-zinc-300 p-4 rounded-lg'>{JSON.stringify(form, null, 2)}</pre>
-      </main>
-    </>
-  )
-}
-
-export default App
+export default App;
