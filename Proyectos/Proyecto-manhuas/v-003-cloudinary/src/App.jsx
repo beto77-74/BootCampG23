@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
 
-import CloudinaryUploadWidget  from './components/CloudinaryUploadWidget';
+import CloudinaryUploadWidget from './components/CloudinaryUploadWidget';
+import  ProductGallery  from './components/ProductGallery';
 
 //import './App.css';
 
@@ -27,46 +28,49 @@ const App = () => {
     uploadPreset: UPLOAD_PRESET
   };
 
+
+  // const ProductGallery = () => {
+  //   const containerRef = useRef(null);
+  //     useEffect (() => {
+  //         if (window && containerRef.current) {
+             
+  //             window.cloudinary.galleryWidget (
+  //             {
+  //                 container: containerRef.current,
+  //                 cloudname: 'dgddunrtu',
+  //                 AspectRatio: '16:9',
+  //                 mediaAssets: [{tag: 'MI-GALERIA'}],
+  //                 carouselStyle: 'indicators',
+  //                 carouselLocation:'bottom'
+  
+  //             }).render();
+  //         }
+  //     },[]);
+  
+  //     return containerRef
+  // }
+
   return (
-    <div className="App">
-      <h3>Cloudinary Upload Widget Example</h3>
+    <>
+      <main>
+
+      <h1>Carga de Archivos...</h1>
 
       <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
+       
+      <h1>Galeria de productos - React</h1>
+      <ProductGallery
+        galleryConfig={{
+          mediaAssets: [
+            { tag: 'g23-semana11' },
+          ],
+          aspectRatio: '4:3',
+        }} uwConfig={uwConfig} />
+      
+ 
+      </main>
 
-      {/* <div className="documentation-links">
-        <p>
-          <a
-            href="https://cloudinary.com/documentation/upload_widget"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Upload Widget User Guide
-          </a>
-        </p>
-        <p>
-          <a
-            href="https://cloudinary.com/documentation/upload_widget_reference"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Upload Widget Reference
-          </a>
-        </p>
-      </div> */}
-
-      {publicId && (
-        <div
-          className="image-preview"
-          style={{ width: '800px', margin: '20px auto' }}
-        >
-          <AdvancedImage
-            style={{ maxWidth: '50%' }}
-            cldImg={cld.image(publicId)}
-            plugins={[responsive(), placeholder()]}
-          />
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 
