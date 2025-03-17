@@ -13,8 +13,6 @@ const CloudinaryUploadWidget = ({ uwConfig, setPublicId }) => {
           (error, result) => {
             if (!error && result && result.event === 'success') {
               console.log('Upload successful:', result.info);
-              // document.getElementById("uploadedimage")
-              // document.setAttribute("src", result.info.secure_url);
               setPublicId(result.info.public_id);
             }
           }
@@ -41,7 +39,7 @@ const CloudinaryUploadWidget = ({ uwConfig, setPublicId }) => {
   }, [uwConfig, setPublicId]);
 
   return (
-      <>
+
       <button
         ref={uploadButtonRef}
         id="upload_widget"
@@ -49,12 +47,6 @@ const CloudinaryUploadWidget = ({ uwConfig, setPublicId }) => {
        >
         Carga de archivos!
       </button>
-
-      {/* <img  
-        id="uploadedimage" 
-        src="">
-      </img>  */}
-      </>
 
   );
 };

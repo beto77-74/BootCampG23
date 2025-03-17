@@ -58,14 +58,14 @@ const App = () => {
 
       <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
        
-      <h1>Galeria de productos - React</h1>
+      {/* <h1>Galeria de productos - React</h1>
       <ProductGallery
         galleryConfig={{
           mediaAssets: [
             { tag: 'g23-semana11' },
           ],
           aspectRatio: '4:3',
-        }} uwConfig={uwConfig} />
+        }} uwConfig={uwConfig} /> */}
       
  
       </main>

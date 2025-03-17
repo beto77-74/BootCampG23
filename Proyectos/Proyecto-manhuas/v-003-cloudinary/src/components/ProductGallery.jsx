@@ -7,18 +7,19 @@ const ProductGallery = ({ galleryConfig, uwConfig }) => {
 
   useEffect(() => {
     if (window && galleryRef.current) {
-        cloudinary.galleryWidget({
+        const miGaleria = cloudinary.galleryWidget({
           container: galleryRef.current,
           cloudName: uwConfig.cloudName,
           ...galleryConfig,
         })
-        .render();
+        miGaleria.render();
     }
   }, [galleryConfig]);
 
   return (
    
-    <div ref={galleryRef} style={{ width: '80%', margin: 'auto' }}>
+    <div id="miGaleria" style={{ width: '80%', margin: 'auto' }}>
+      
       <div>Cargando...</div>
     </div>
   );
