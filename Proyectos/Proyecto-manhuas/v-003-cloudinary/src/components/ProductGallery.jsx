@@ -25,3 +25,6 @@ const ProductGallery = ({ galleryConfig, uwConfig }) => {
 };
 
 export default ProductGallery;
+
+
+
